@@ -1,1 +1,6 @@
-//This will be my main for my choose your own adventure game
+//Choose Your Own Adventure game by Nai'a Suda
+package TextGame;
+
+public class main {
+
+}
