@@ -1,0 +1,38 @@
+package part1;
+
+//Killer represents the hostile entity
+public class Killer implements HorrorEntity{
+    private String name;
+    private boolean hostile;
+
+    //creates the new killer
+    public Killer(String name){
+        this.name = name;
+        //killer is always hostile
+        this.hostile = true;
+    }
+
+    //return killer name
+    @Override
+    public String getName(){
+        return name;
+    }
+
+    //describe what happens in interectons with the killer
+    @Override
+    public void interact(){
+        System.out.println(name + " stares at you from the hallway...");
+    }
+
+    //describes how the killer is attacking the player
+    @Override
+    public void attack(){
+        System.out.println(name + " charges at you with a weapon!");
+    }
+
+    //indicates if the killer is hostile or not
+    @Override
+    public boolean isHostile(){
+        return hostile;
+    }
+}
