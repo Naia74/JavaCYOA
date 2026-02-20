@@ -1,0 +1,6 @@
+package part2;
+
+public interface GameObject{
+	//get id for tracking, debugging, and more
+    String getId();
+}
