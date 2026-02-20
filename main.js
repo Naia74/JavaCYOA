@@ -1,37 +1,27 @@
-//Choose Your Own Adventure game by Nai'a Suda
-package TextGame;
+/*This choose your own adventure game that I made will take you on a journey of 3 friends as they try to survive the
+worst night of their lives. When they are all hanging out a killer breaks into the house and chaos ensues. It is
+all up to you on where the story goes depending on your descisions and that will affect the outcome of the story.*/
+package textGame;
 
-//Logging structure
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
+import database.DatabaseManager;
+import part2.Player;
 
-public class main{
-    //Initial Log4J logger for the application
-    private static final Logger logger = LogManager.getLogger(main.class);
-
+//Entry point for the Choose Your Own Adventure game that initializes the database and loads player stats
+public class Main{
     public static void main(String[] args){
-        logger.info("Application started.");
-        try{
-            logger.info("Attempting to run game initialization...");
-            //Placeholder for the game logic
-            initializeGame();
-        }
-        catch (Exception e){
-            //Basic exception handling structure
-            logger.error("An error occurred during game initialization.", e);
-            System.out.println("Something went wrong while starting the game.");
-        }
-        finally{
-            //This block will always run
-            logger.info("Application shutting down (finally block executed).");
-        }
-    }
+        //Initialize database
+        DatabaseManager db = new DatabaseManager();
+        db.createTable();
 
-    //Placeholder method to demonstrate exception handling and logging
-    private static void initializeGame() throws Exception{
-        logger.debug("Inside initializeGame() method.");
+        //Insert a player row (only runs once; duplicates will be ignored)
+        db.insertPlayer(1, "Ethan", 120, 1);
 
-        //Forced exception to test logging and which will be replaced with real logic later on
-        throw new Exception("Test exception for initial logging structure.");
+        //Create the player using DB values
+        Player ethan = new Player("Ethan", 1);
+
+        System.out.println("Welcome, Ethan.");
+        System.out.println("Your starting health (from DB): " + ethan.getHealth());
+
+        //TODO: Continue game logic here
     }
 }
