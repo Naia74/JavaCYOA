@@ -1,0 +1,24 @@
+package part3;
+
+//logger that will be used to record important events that happen in the story
+public class GameLogger{
+
+    private static GameLogger instance;
+
+    private GameLogger(){
+        //private constructor prevents external instantiation
+    }
+
+    //returns a single shared instance of the GameLogger
+    public static GameLogger getInstance(){
+        if(instance == null){
+            instance = new GameLogger();
+        }
+        return instance;
+    }
+
+    //writes a log message to the console
+    public void log(String message){
+        System.out.println("[LOG] " + message);
+    }
+}
