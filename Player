@@ -1,0 +1,21 @@
+package part2;
+
+public class Player extends Character{
+	//gives the player (main character) a starting id and health
+    public Player(String id, int health){
+        super(id, health);
+    }
+
+    //reduces player health when attacked
+    @Override
+    public void takeDamage(int amount){
+        health -= amount;
+        System.out.println("Player took " + amount + " damage.");
+    }
+    
+
+    //Returns the player's current health needed so the Main can print the DB-loaded health value
+    public int getHealth(){
+        return health;
+    }
+}
