@@ -1,0 +1,7 @@
+package part2;
+
+//represents any living charaacters
+public interface LivingThing extends GameObject{
+	//applies damage to respective enemy
+    void takeDamage(int amount);
+}
