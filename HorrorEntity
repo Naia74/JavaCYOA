@@ -1,0 +1,9 @@
+package part1;
+
+//these will define the basic elements of the horrorentity (killer)
+public interface HorrorEntity{
+    String getName();
+    void interact();
+    void attack();
+    boolean isHostile();
+}
