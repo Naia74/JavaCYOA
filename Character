@@ -1,0 +1,19 @@
+package part2;
+
+public abstract class Character implements LivingThing{
+	//unique identifiers for characters
+    protected String id;
+    protected int health;
+
+    //construct character with the info above
+    public Character(String id, int health){
+        this.id = id;
+        this.health = health;
+    }
+
+    //return id for the character
+    @Override
+    public String getId(){
+        return id;
+    }
+}
