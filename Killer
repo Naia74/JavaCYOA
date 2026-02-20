@@ -1,0 +1,17 @@
+package part2;
+
+//new killer class to implement classes and interfaces that extend one another
+public class Killer extends Character{
+
+	//creates new killer with id and health
+    public Killer(String id, int health){
+        super(id, health);
+    }
+
+    //reduces the killers health by a specific amount
+    @Override
+    public void takeDamage(int amount){
+        health -= amount;
+        System.out.println("Killer took " + amount + " damage.");
+    }
+}
